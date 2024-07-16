@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadania</title>
+</head>
+<body>
+    <h1>Sistema de Cidadania</h1>
+    Qual o seu país: <input type="text" name="pais" id="pais"> 
+    <input type="button" value="Verificar" onclick="pesquisar()"> 
+    <div id="res">
+
+    </div>
+    <script>
+        function pesquisar() {
+            var txtv = window.document.querySelector('input#pais').value; // Aqui, pegamos o valor diretamente
+            var res = window.document.querySelector('div#res');
+            res.innerHTML = `<p>Você nasceu em <strong>${txtv}</strong></p>`; // Corrigido o uso do innerHTML
+            if (txtv !== "Brasil") { // Corrigido para comparar com uma string
+                res.innerHTML += '<p>Você é <strong>Brasileiro</strong></p>'; // Adicionando a mensagem sobre ser brasileiro
+            } else {
+                res.innerHTML !== '<p>Você é estrangeiro!</p>'; // Adicionando a mensagem sobre ser estrangeiro
+            }
+        }
+    </script>
+</body>
+</html>
